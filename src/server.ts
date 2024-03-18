@@ -14,3 +14,18 @@ const main = () => {
 };
 
 main();
+
+process.on("unhandledRejection", () => {
+  console.log("Unhandled Rejection is detected. shuting down...");
+  if (server) {
+    server.close(() => {
+      process.exit(1);
+    });
+  }
+  process.exit(1);
+});
+
+process.on("uncaughtException", () => {
+  console.log("Uncaught Exception is detected. shutting down ...");
+  process.exit(1);
+});
