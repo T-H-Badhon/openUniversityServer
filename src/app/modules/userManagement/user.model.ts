@@ -71,6 +71,19 @@ const userSchema = new Schema<TUser>(
       type: String,
       required: true,
     },
+    name: {
+      type: nameSchema,
+      required: true,
+    },
+    contactNo: { type: String, required: true },
+    address: {
+      type: addressSchema,
+      required: true,
+    },
+    guardian: {
+      type: guardianSchema,
+      required: true,
+    },
     role: {
       type: String,
       enum: [
@@ -103,19 +116,6 @@ const studentSchema = new Schema<TStudent>(
     uuid: { type: Schema.Types.ObjectId, required: true },
     userId: { type: String, required: true },
     studentId: { type: String, required: true },
-    name: {
-      type: nameSchema,
-      required: true,
-    },
-    contactNo: { type: String, required: true },
-    address: {
-      type: addressSchema,
-      required: true,
-    },
-    guardian: {
-      type: guardianSchema,
-      required: true,
-    },
     enrolledDegree: { type: Schema.Types.ObjectId, required: true },
     enrolledDepartment: { type: Schema.Types.ObjectId, required: true },
     enrolledFaculty: { type: Schema.Types.ObjectId, required: true },
@@ -137,19 +137,6 @@ const lecturerSchema = new Schema<TLecturer>(
     uuid: { type: Schema.Types.ObjectId, required: true },
     userId: { type: String, required: true },
     lecturerId: { type: String, required: true },
-    name: {
-      type: nameSchema,
-      required: true,
-    },
-    contactNo: { type: String, required: true },
-    address: {
-      type: addressSchema,
-      required: true,
-    },
-    guardian: {
-      type: guardianSchema,
-      required: true,
-    },
     assignDepartment: { type: Schema.Types.ObjectId, required: true },
     assignFaculty: { type: Schema.Types.ObjectId, required: true },
     status: { type: String, enum: ["active", "inactive"], required: true },
@@ -164,19 +151,6 @@ const dAdminSchema = new Schema<TDepartmentAdmin>(
     uuid: { type: Schema.Types.ObjectId, required: true },
     userId: { type: String, required: true },
     dAdminId: { type: String, required: true },
-    name: {
-      type: nameSchema,
-      required: true,
-    },
-    contactNo: { type: String, required: true },
-    address: {
-      type: addressSchema,
-      required: true,
-    },
-    guardian: {
-      type: guardianSchema,
-      required: true,
-    },
     assignDepartment: { type: Schema.Types.ObjectId, required: true },
     assignFaculty: { type: Schema.Types.ObjectId, required: true },
     status: { type: String, enum: ["active", "inactive"], required: true },
@@ -191,19 +165,6 @@ const fAdminSchema = new Schema<TFacultyAdmin>(
     uuid: { type: Schema.Types.ObjectId, required: true },
     userId: { type: String, required: true },
     fAdminId: { type: String, required: true },
-    name: {
-      type: nameSchema,
-      required: true,
-    },
-    contactNo: { type: String, required: true },
-    address: {
-      type: addressSchema,
-      required: true,
-    },
-    guardian: {
-      type: guardianSchema,
-      required: true,
-    },
     assignFaculty: { type: Schema.Types.ObjectId, required: true },
     status: { type: String, enum: ["active", "inactive"], required: true },
   },
@@ -217,19 +178,6 @@ const controllerSchema = new Schema<TController>(
     uuid: { type: Schema.Types.ObjectId, required: true },
     userId: { type: String, required: true },
     controllerId: { type: String, required: true },
-    name: {
-      type: nameSchema,
-      required: true,
-    },
-    contactNo: { type: String, required: true },
-    address: {
-      type: addressSchema,
-      required: true,
-    },
-    guardian: {
-      type: guardianSchema,
-      required: true,
-    },
     assignFaculty: { type: Schema.Types.ObjectId, required: true },
     status: { type: String, enum: ["active", "inactive"], required: true },
   },
@@ -243,19 +191,6 @@ const adminSchema = new Schema<TAdmin>(
     uuid: { type: Schema.Types.ObjectId, required: true },
     userId: { type: String, required: true },
     adminId: { type: String, required: true },
-    name: {
-      type: nameSchema,
-      required: true,
-    },
-    contactNo: { type: String, required: true },
-    address: {
-      type: addressSchema,
-      required: true,
-    },
-    guardian: {
-      type: guardianSchema,
-      required: true,
-    },
     status: { type: String, enum: ["active", "inactive"], required: true },
   },
   {

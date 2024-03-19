@@ -19,54 +19,39 @@ export type TGuardian = {
   contactNo: string;
 };
 
-export type TRoles =
-  | "student"
-  | "lecturer"
-  | "department-admin"
-  | "faculty-admin"
-  | "controller"
-  | "applicant"
-  | "admin";
-
-export type TUser = {
+export type TSApplication = {
+  uuid: Types.ObjectId;
   userId: string;
-  userName: string;
   name: TName;
   contactNo: string;
   address: TAddress;
   guardian: TGuardian;
-  role: TRoles;
-  email: string;
-  password: string;
-};
-
-export type TStudent = {
-  uuid: Types.ObjectId;
-  userId: string;
-  studentId: string;
-  enrolledDegree: Types.ObjectId;
-  enrolledDepartment: Types.ObjectId;
-  enrolledFaculty: Types.ObjectId;
-  enrolledSession: Types.ObjectId;
-  academicSemester: "1st" | "2nd" | "3rd" | "4th";
-  status: "running" | "graduated";
+  appliedDegree: Types.ObjectId;
+  appliedDepartment: Types.ObjectId;
+  appliedFaculty: Types.ObjectId;
+  appliedSession: Types.ObjectId;
 };
 
 export type TLecturer = {
   uuid: Types.ObjectId;
   userId: string;
-  lecturerId: string;
-  assignDepartment: Types.ObjectId;
-  assignFaculty: Types.ObjectId;
-  status: "active" | "inactive";
+  name: TName;
+  contactNo: string;
+  address: TAddress;
+  guardian: TGuardian;
+  appliedDepartment: Types.ObjectId;
+  appliedFaculty: Types.ObjectId;
 };
 
 export type TDepartmentAdmin = {
   uuid: Types.ObjectId;
   userId: string;
-  dAdminId: string;
-  assignDepartment: Types.ObjectId;
-  assignFaculty: Types.ObjectId;
+  name: TName;
+  contactNo: string;
+  address: TAddress;
+  guardian: TGuardian;
+  appliedDepartment: Types.ObjectId;
+  appliedFaculty: Types.ObjectId;
   status: "active" | "inactive";
 };
 
@@ -74,6 +59,10 @@ export type TFacultyAdmin = {
   uuid: Types.ObjectId;
   userId: string;
   fAdminId: string;
+  name: TName;
+  contactNo: string;
+  address: TAddress;
+  guardian: TGuardian;
   assignFaculty: Types.ObjectId;
   status: "active" | "inactive";
 };
@@ -82,6 +71,10 @@ export type TController = {
   uuid: Types.ObjectId;
   userId: string;
   controllerId: string;
+  name: TName;
+  contactNo: string;
+  address: TAddress;
+  guardian: TGuardian;
   assignFaculty: Types.ObjectId;
   status: "active" | "inactive";
 };
@@ -90,5 +83,9 @@ export type TAdmin = {
   uuid: Types.ObjectId;
   userId: string;
   adminId: string;
+  name: TName;
+  contactNo: string;
+  address: TAddress;
+  guardian: TGuardian;
   status: "active" | "inactive";
 };
