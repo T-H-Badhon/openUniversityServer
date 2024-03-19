@@ -16,6 +16,7 @@ export type TGuardian = {
   relation: string;
   firstName: string;
   lastName: string;
+  contactNo: string;
 };
 
 export type TRoles =
@@ -43,7 +44,7 @@ export type TStudent = {
   contactNo: string;
   address: TAddress;
   guardian: TGuardian;
-  enrolledDergee: Types.ObjectId;
+  enrolledDegree: Types.ObjectId;
   enrolledDepartment: Types.ObjectId;
   enrolledFaculty: Types.ObjectId;
   enrolledSession: Types.ObjectId;
@@ -59,8 +60,8 @@ export type TLecturer = {
   contactNo: string;
   address: TAddress;
   guardian: TGuardian;
-  assignDepartment: string;
-  assignFaculty: string;
+  assignDepartment: Types.ObjectId;
+  assignFaculty: Types.ObjectId;
   status: "active" | "inactive";
 };
 
@@ -72,8 +73,8 @@ export type TDepartmentAdmin = {
   contactNo: string;
   address: TAddress;
   guardian: TGuardian;
-  assignDepartment: string;
-  assignFaculty: string;
+  assignDepartment: Types.ObjectId;
+  assignFaculty: Types.ObjectId;
   status: "active" | "inactive";
 };
 
@@ -85,7 +86,7 @@ export type TFacultyAdmin = {
   contactNo: string;
   address: TAddress;
   guardian: TGuardian;
-  assignFaculty: string;
+  assignFaculty: Types.ObjectId;
   status: "active" | "inactive";
 };
 
@@ -97,7 +98,7 @@ export type TController = {
   contactNo: string;
   address: TAddress;
   guardian: TGuardian;
-  assignFaculty: string;
+  assignFaculty: Types.ObjectId;
   status: "active" | "inactive";
 };
 
@@ -109,6 +110,5 @@ export type TAdmin = {
   contactNo: string;
   address: TAddress;
   guardian: TGuardian;
-  assignFaculty: string;
   status: "active" | "inactive";
 };
