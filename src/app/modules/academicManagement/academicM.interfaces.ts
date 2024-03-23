@@ -22,5 +22,5 @@ export type TAcademicCourse = {
 
 export type TAcademicSession = {
   sessionId: string;
-  academicSession: string;
+  session: string;
 };
