@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-import { TCarrer } from "./carrer.interface";
-import { requirementSchema } from "../admission/admission.model";
+import { TCarrer } from "./carrerCircular.interface";
+import { requirementSchema } from "../admissionCirculer/admission.model";
 
 const carrerSchema = new Schema<TCarrer>(
   {

@@ -1,4 +1,4 @@
-import { TRequirement } from "../admission/admission.interface";
+import { TRequirement } from "../admissionCirculer/admission.interface";
 
 export type TPost =
   | "lecturer"

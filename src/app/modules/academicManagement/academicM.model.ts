@@ -1,10 +1,26 @@
-import { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import {
   TAcademicCourse,
   TAcademicDepartment,
   TAcademicFaculty,
   TAcademicSession,
 } from "./academicM.interfaces";
+
+const aSessionSchema = new Schema<TAcademicSession>(
+  {
+    sessionId: {
+      type: String,
+      required: true,
+    },
+    session: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const aFacultySchema = new Schema<TAcademicFaculty>(
   {
@@ -74,18 +90,19 @@ const aCourseSchema = new Schema<TAcademicCourse>(
   }
 );
 
-const aSessionSchema = new Schema<TAcademicSession>(
-  {
-    sessionId: {
-      type: String,
-      required: true,
-    },
-    academicSession: {
-      type: String,
-      required: true,
-    },
-  },
-  {
-    timestamps: true,
-  }
+export const Course = mongoose.model<TAcademicCourse>("course", aCourseSchema);
+
+export const Department = mongoose.model<TAcademicDepartment>(
+  "department",
+  aDepartmentSchema
+);
+
+export const Faculty = mongoose.model<TAcademicFaculty>(
+  "faculty",
+  aFacultySchema
+);
+
+export const Session = mongoose.model<TAcademicSession>(
+  "session",
+  aSessionSchema
 );

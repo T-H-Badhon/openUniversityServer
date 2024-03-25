@@ -110,27 +110,27 @@ const aApplicationSchema = new Schema<TAApplication>(
   }
 );
 
-export const SApplicationModel = mongoose.model<TSApplication>(
+export const SApplication = mongoose.model<TSApplication>(
   "s-application",
   sApplicationSchema
 );
-export const LApplicationModel = mongoose.model<TLApplication>(
+export const LApplication = mongoose.model<TLApplication>(
   "l-application",
   lApplicationSchema
 );
-export const DAApplicationModel = mongoose.model<TDAApplication>(
+export const DAApplication = mongoose.model<TDAApplication>(
   "da-application",
   dAApplicationSchema
 );
-export const FAApplicationModel = mongoose.model<TFAApplication>(
+export const FAApplication = mongoose.model<TFAApplication>(
   "fa-application",
   fAApplicationSchema
 );
-export const CApplicationModel = mongoose.model<TCApplication>(
+export const CApplication = mongoose.model<TCApplication>(
   "c-application",
   cApplicationSchema
 );
-export const AApplicationModel = mongoose.model<TAApplication>(
+export const AApplication = mongoose.model<TAApplication>(
   "a-application",
   aApplicationSchema
 );

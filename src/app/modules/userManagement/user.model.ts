@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import {
+  TAcademicQualification,
   TAddress,
   TAdmin,
   TController,
@@ -61,6 +62,21 @@ const guardianSchema = new Schema<TGuardian>({
   },
 });
 
+const academicQualificationSchema = new Schema<TAcademicQualification>({
+  exam: {
+    type: String,
+    required: true,
+  },
+  passingYear: {
+    type: Number,
+    required: true,
+  },
+  result: {
+    type: Number,
+    required: true,
+  },
+});
+
 const userSchema = new Schema<TUser>(
   {
     userId: {
@@ -76,6 +92,7 @@ const userSchema = new Schema<TUser>(
       required: true,
     },
     contactNo: { type: String, required: true },
+    academicQualification: [academicQualificationSchema],
     address: {
       type: addressSchema,
       required: true,
@@ -92,7 +109,7 @@ const userSchema = new Schema<TUser>(
         "department-admin",
         "faculty-admin",
         "controller",
-        "visitor",
+        "applicant",
         "admin",
       ],
       required: true,
@@ -104,6 +121,10 @@ const userSchema = new Schema<TUser>(
     password: {
       type: String,
       required: true,
+    },
+    isBlocked: {
+      type: Boolean,
+      default: false,
     },
   },
   {

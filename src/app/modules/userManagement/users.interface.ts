@@ -19,6 +19,12 @@ export type TGuardian = {
   contactNo: string;
 };
 
+export type TAcademicQualification = {
+  exam: string;
+  passingYear: number;
+  result: number;
+};
+
 export type TRoles =
   | "student"
   | "lecturer"
@@ -34,10 +40,12 @@ export type TUser = {
   name: TName;
   contactNo: string;
   address: TAddress;
+  academicQualification: TAcademicQualification[];
   guardian: TGuardian;
   role: TRoles;
   email: string;
   password: string;
+  isBlocked: boolean;
 };
 
 export type TStudent = {
