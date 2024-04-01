@@ -11,8 +11,8 @@ const router = Router();
 //user.........................
 
 router.post("/create-user");
-router.get("/users");
-router.get("/users/userId");
+router.get("/");
+router.get("/userId");
 router.delete("/delete-user");
 router.patch("/block-user");
 
