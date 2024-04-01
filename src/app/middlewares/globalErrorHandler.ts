@@ -11,7 +11,7 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
     success,
     message,
     errorMessage,
-    errorDetails,
+    errorDetails: err,
   });
 };
 

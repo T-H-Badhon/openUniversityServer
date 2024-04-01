@@ -1,44 +1,27 @@
 import { Router } from "express";
+import { adminRoutes } from "./admin/admin.routes";
+import { controllerRoutes } from "./controller/controller.routes";
+import { facultyAdminRoutes } from "./facultyAdmin/facultyAdmin.routes";
+import { departmenAdmintRoutes } from "./departmentAdmin/departmentAdmin.routes";
+import { lecturerRoutes } from "./lecturer/lecturer.routes";
+import { studentRoutes } from "./student/student.routes";
 
 const router = Router();
 
-//create user.........................
+//user.........................
 
 router.post("/create-user");
-
-//admin control......................
-
-//students
-router.get("/students");
-router.get("/students/:studentId");
-
-//lecturers
-router.get("/lecturers");
-router.get("/lecturers/:lecturerId");
-
-//department admins
-router.get("/department-admins");
-router.get("/department-admins/:dAdminId");
-
-//faculty admins
-router.get("/faculty-admins");
-router.get("/faculty-admins/:fAdminId");
-
-//controllers
-router.get("/controllers");
-router.get("/controllers/:controllerId");
-
-//admin
-router.get("/admins");
-router.get("/admins/adminId");
-
-//common
+router.get("/users");
+router.get("/users/userId");
 router.delete("/delete-user");
 router.patch("/block-user");
 
-//own account control.................
-
-router.patch("/me");
-router.delete("/me");
+//sub modules
+router.use("/admins", adminRoutes);
+router.use("/controllers", controllerRoutes);
+router.use("/faculty-admins", facultyAdminRoutes);
+router.use("/department-admins", departmenAdmintRoutes);
+router.use("/lecturers", lecturerRoutes);
+router.use("/students", studentRoutes);
 
 export const userRoutes = router;

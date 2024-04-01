@@ -48,7 +48,7 @@ const aDepartmentSchema = new Schema<TAcademicDepartment>(
       type: String,
       required: true,
     },
-    ufid: {
+    fuid: {
       type: Schema.Types.ObjectId,
       required: true,
     },

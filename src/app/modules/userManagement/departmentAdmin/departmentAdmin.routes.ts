@@ -1,0 +1,11 @@
+import { Router } from "express";
+
+const router = Router();
+
+router.get("/");
+router.get("/:dAdminId");
+router.get("/me");
+router.patch("/me");
+router.delete("/me");
+
+export const departmenAdmintRoutes = router;

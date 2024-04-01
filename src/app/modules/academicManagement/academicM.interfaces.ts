@@ -8,7 +8,7 @@ export type TAcademicFaculty = {
 export type TAcademicDepartment = {
   departmentId: string;
   departmentName: string;
-  ufid: Types.ObjectId;
+  fuid: Types.ObjectId;
   facultyId: string;
 };
 
